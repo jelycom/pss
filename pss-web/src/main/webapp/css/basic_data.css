@@ -1,0 +1,28 @@
+﻿body{
+	font-size:12px;
+}
+div{
+	position:relative;
+}
+li{
+	float:left;
+	display:block;
+	padding:5px;
+	cursor:pointer;
+}
+.query_mode{
+	vertical-align:top;
+}
+
+/* 数据显示部分 */
+.data_div{
+	clear:both;
+	padding-left:0px;
+	padding-right:0px;
+	text-align:center;
+}
+
+/* 定义单位单元格的样式 */
+.unit_relation td, .unit_relation th{
+	border:1px solid #666;	
+}

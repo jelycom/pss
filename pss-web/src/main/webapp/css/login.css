@@ -1,0 +1,13 @@
+﻿body{
+	margin:0px;
+	padding:0px;
+	background:#cde6fa;
+}
+td{
+	font-size:12px;
+	font-family:"宋体";
+	line-height:18px;
+}
+#login{
+	border:0;
+}

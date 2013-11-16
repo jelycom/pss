@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 是否启用开发模式 开启后在关闭tomcat时会报错,开发完成后一定置为false-->
+	<constant name="struts.devMode" value="false" />
+	<!-- struts配置文件改动后，是否重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<!-- 设置浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 每次HTTP请求系统都重新加载资源文件，有助于开发 -->
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+
+	<!-- <package name="default" namespace="/" extends="struts-default"> -->
+	<package name="jely-default" abstract="true" extends="json-default">
+		<interceptors>
+			<interceptor name="security" class="cn.jely.cd.util.interceptor.SecurityInterceptor"></interceptor>
+			<interceptor name="queryData" class="cn.jely.cd.util.interceptor.QueryDataInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="paramsPrepareParamsStack" />
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<!-- 按Struts2的说明配置，但只是无效的，只能更改默认配置文件 -->
+				<!-- <interceptor-ref name="validation"> <param name="validateAnnotatedMethodOnly">true</param> <param name="excludeMethods">input,back,cancel,browse</param> 
+					</interceptor-ref> -->
+				<interceptor-ref name="security" />
+				<interceptor-ref name="queryData" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+
+		<default-action-ref name="login" />
+		<global-results>
+			<!-- 没有权限时 -->
+			<result name="error">/WEB-INF/error.jsp</result>
+			<result name="main" type="redirectAction">
+			<param name="actionName">main</param>
+			<param name="namespace">/</param>
+			</result>
+			<result name="input">/WEB-INF/input.jsp</result>
+			<result name="none"></result>
+			<result name="login">/login.jsp</result><!-- type="redirect" -->
+			<result name="jsonList" type="json">
+				<param name="root">actionJsonResult</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="enumAsBean">true</param>
+			</result>
+			<result name="jsonAll" type="json">
+				<param name="root">actionJsonResult</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="enumAsBean">true</param>
+			</result>
+		</global-results>
+		<!-- 全局错误配置,所有的Exception均返回error,转向error指定的视图-->
+<!-- 		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+ -->
+		<action name="main">
+			<result>/WEB-INF/jsps/main.jsp</result>
+		</action>
+	</package>
+	<package name="basedata" namespace="/" extends="jely-default">
+		<action name="*_*" class="{1}Action" method="{2}">
+			<result name="jsonFuzzy" type="json">
+				<param name="root">pager</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<!-- <result name="jsonTree" type="json"> <param name="excludeNullProperties">true</param> </result> <result name="jsoninput" 
+				type="json"> <param name="excludeNullProperties">true</param> </result> -->
+			<result name="success">/WEB-INF/jsps/{1}/{1}_list.jsp</result>
+			<result name="show">/WEB-INF/jsps/{1}/{1}_show.jsp</result>
+			<!-- <result name="reload"></result> -->
+			<result name="reload" type="redirectAction">{1}_list.action</result>
+		</action>
+	</package>
+	<include file="struts/sys.xml" />
+
+	<!-- Add packages here -->
+
+</struts>

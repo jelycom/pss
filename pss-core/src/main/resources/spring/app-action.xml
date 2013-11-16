@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<!-- 系统环境 -->
+	<bean id="sysConfigEnvActionHelper" class="cn.jely.cd.util.SysConfigEnvActionHelper"></bean>
+	<!-- 登陆 -->
+	<bean id="loginAction" class="cn.jely.cd.web.LoginAction" scope="prototype"></bean>
+	<!-- 登出 -->
+	<bean id="logoutAction" class="cn.jely.cd.web.LogoutAction" scope="prototype"></bean>
+	<!-- 登陆 -->
+	<bean id="systemAction" class="cn.jely.cd.sys.web.SystemAction" scope="prototype"></bean>
+	<!-- 数据字典类型 -->
+	<bean id="baseDataTypeAction" class="cn.jely.cd.web.BaseDataTypeAction" scope="prototype"></bean>
+	<!-- 数据字典内容 -->
+	<bean id="baseDataAction" class="cn.jely.cd.web.BaseDataAction" scope="prototype"></bean>
+	<!-- 产品分类 -->
+	<bean id="productTypeAction" class="cn.jely.cd.web.ProductTypeAction" scope="prototype"></bean>
+	<!-- 产品 -->
+	<bean id="productAction" class="cn.jely.cd.web.ProductAction" scope="prototype"></bean>
+	<!-- 资源 -->
+	<bean id="actionResourceAction" class="cn.jely.cd.sys.web.ActionResourceAction" scope="prototype" />
+	<!-- 角色 -->
+	<bean id="roleAction" class="cn.jely.cd.sys.web.RoleAction" scope="prototype" />
+	<!-- 用户  -->
+	<bean id="userAction" class="cn.jely.cd.sys.web.UserAction" scope="prototype"/>
+	<!-- 现金银行帐户 -->
+	<bean id="fundAccountAction" class="cn.jely.cd.web.FundAccountAction" scope="prototype" />
+	<!-- 往来单位 -->
+	<bean id="businessUnitsAction" class="cn.jely.cd.web.BusinessUnitsAction" scope="prototype" />
+	<!-- 联系人 -->
+	<bean id="contactsAction" class="cn.jely.cd.web.ContactsAction" scope="prototype" />
+	<!-- 仓库 -->
+	<bean id="warehouseAction" class="cn.jely.cd.web.WarehouseAction" scope="prototype" />
+	<!-- 仓库货位 -->
+	<bean id="warehouseAllocationAction" class="cn.jely.cd.web.WarehouseAllocationAction" scope="prototype" />
+	<!-- 部门 -->
+	<bean id="departmentAction" class="cn.jely.cd.web.DepartmentAction" scope="prototype" />
+	<!-- 员工 -->
+	<bean id="employeeAction" class="cn.jely.cd.web.EmployeeAction" scope="prototype" />
+	<!-- 结帐期间 -->
+	<bean id="accountingPeriodAction" class="cn.jely.cd.sys.web.AccountingPeriodAction" scope="prototype" />
+	<!-- 期初帐户 -->
+	<bean id="periodAccountAction" class="cn.jely.cd.sys.web.PeriodAccountAction" scope="prototype"/>
+	<!-- 期初应收应付 -->
+	<bean id="periodARAPAction" class="cn.jely.cd.sys.web.PeriodARAPAction" scope="prototype"/>
+	<!-- 期初库存 -->
+	<bean id="periodStockAction" class="cn.jely.cd.sys.web.PeriodStockAction" scope="prototype"/>
+	<!-- 公司信息 -->
+	<bean id="systemSettingAction" class="cn.jely.cd.sys.web.SystemSettingAction" scope="prototype"/>
+	<!-- 页面查询条件信息 -->
+	<bean id="querydataAction" class="cn.jely.cd.web.QuerydataAction" scope="prototype"/>
+	<!-- 地区 -->
+	<bean id="regionAction" class="cn.jely.cd.web.RegionAction" scope="prototype" />
+	<!-- 自定义业务类型 -->
+	<bean id="businessTypeAction" class="cn.jely.cd.sys.web.BusinessTypeAction" scope="prototype"/>
+	<!-- 状态 -->
+	<bean id="stateAction" class="cn.jely.cd.sys.web.StateAction" scope="prototype"/>
+	<!-- 状态-资源-操作关联 -->
+	<bean id="stateResourceOPAction" class="cn.jely.cd.sys.web.StateResourceOPAction" scope="prototype"/>
+	<!-- 会计科目 -->
+	<bean id="bursaryAction" class="cn.jely.cd.web.BursaryAction" scope="prototype"/>
+	<!-- 业务单据部分 -->
+	
+	<!-- 产品采购计划 -->
+	<bean id="productPlanPurchaseAction" class="cn.jely.cd.web.ProductPlanPurchaseAction" scope="prototype" />
+	<bean id="productPlanDeliveryAction" class="cn.jely.cd.web.ProductPlanDeliveryAction" scope="prototype" />
+	<!-- 产品订单 -->
+	<bean id="productOrderBillPurchaseAction" class="cn.jely.cd.web.ProductOrderBillPurchaseAction" scope="prototype" />
+	<bean id="productOrderBillDeliveryAction" class="cn.jely.cd.web.ProductOrderBillDeliveryAction" scope="prototype" />
+	<!-- 进出产品 -->
+	<bean id="productDeliveryAction" class="cn.jely.cd.web.ProductDeliveryAction" scope="prototype"/>
+	<bean id="productPurchaseAction" class="cn.jely.cd.web.ProductPurchaseAction" scope="prototype"/>
+	<bean id="productDeliveryReturnAction" class="cn.jely.cd.web.ProductDeliveryReturnAction" scope="prototype"/>
+	<bean id="productPurchaseReturnAction" class="cn.jely.cd.web.ProductPurchaseReturnAction" scope="prototype"/>
+	<!--库存调拨 -->
+	<bean id="productTransferSameAction" class="cn.jely.cd.web.ProductTransferSameAction" scope="prototype"/>
+	<bean id="productTransferDiffAction" class="cn.jely.cd.web.ProductTransferDiffAction" scope="prototype"/>
+	<!-- 收付款 -->
+	<bean id="accountInAction" class="cn.jely.cd.web.AccountInAction" scope="prototype"></bean>
+	<bean id="accountOutAction" class="cn.jely.cd.web.AccountOutAction" scope="prototype"></bean>
+	<!-- 其它收入/费用 -->
+	<bean id="accountOtherInAction" class="cn.jely.cd.web.AccountOtherInAction" scope="prototype"></bean>
+	<bean id="accountOtherOutAction" class="cn.jely.cd.web.AccountOtherOutAction" scope="prototype"></bean>
+	<!-- 转帐 -->
+	<bean id="accountTransferAction" class="cn.jely.cd.web.AccountTransferAction" scope="prototype"></bean>
+	<bean id="productStockAction" class="cn.jely.cd.web.ProductStockAction" scope="prototype"></bean>
+	<!-- 盘点表 -->
+	<bean id="productStockingAction" class="cn.jely.cd.web.ProductStockingAction" scope="prototype"/>
+	<!-- 盘盈盘亏表 -->
+	<bean id="inventoryProfitAction" class="cn.jely.cd.web.InventoryProfitAction" scope="prototype"/>
+	<bean id="inventoryLossAction" class="cn.jely.cd.web.InventoryLossAction" scope="prototype"/>
+</beans>

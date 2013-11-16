@@ -1,0 +1,65 @@
+﻿/* 页面li控制 */
+.li_out{
+	background:#73A3D4;
+}
+.li_over{
+	background:#CCCCFF;
+}
+.pitch_on{
+	border-bottom:1px solid #73A3D4 !important;
+}
+
+/* 头部背景色 */
+.topimage table{
+	background:#3a6592;
+}
+.topmenu table{
+	background:url(../images/topnav_bg.jpg) repeat-x;
+}
+
+/* 菜单背景色 */
+.actionLink a{
+	background-image:url(../images/left_bg_blue.gif);
+	background-repeat:no-repeat;
+}
+.actionLink_over{
+	background-color:#CDDBF0;
+}
+
+/* 内嵌框架背景色 */
+.lable_name{
+	background:#CDDBF0;
+}
+
+/* 控制表格样式 */
+thead th{
+	background:#529EE7;
+}
+.odd{
+	background:#EBFFF9;
+}
+.tr_focus{
+	background:#B7C3F5 !important;
+}
+
+/* 弹出窗口 */
+.popup_window{
+	border:4px solid #73A3D4;
+}
+.popup_window_title{
+	background:#73A3D4;
+}
+
+/* 基本信息表 */
+.page_title{
+	background-color:#73A3D4;
+}
+
+/* 弹出选择框隔行变行 */
+.li_odd{
+	background: #BBBBBB;
+}
+.select_li_over{
+	background:#06C;
+	color:#FFF;
+}

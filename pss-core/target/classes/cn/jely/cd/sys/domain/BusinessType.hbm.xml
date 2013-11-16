@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.jely.cd.sys.domain">
+    <class name="BusinessType" table="businesstype"> 
+    	<comment>自定义业务单据类型</comment>
+        <id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="org.hibernate.id.enhanced.TableGenerator">
+				<param name="table_name">sequence</param>
+				<param name="segment_value">BUSINESSTYPE</param>
+			</generator>
+        </id>
+         <property name="name" type="java.lang.String">
+            <column name="name" length="14" not-null="true" unique="true"/>
+        </property>
+         <property name="py" type="java.lang.String">
+            <column name="py" length="40"/>
+        </property>
+         <property name="stock" type="java.lang.Character">
+            <column name="stock" />
+        </property>
+         <property name="fund" type="java.lang.Character">
+            <column name="fund" />
+        </property>
+         <property name="receivable" type="java.lang.Character">
+            <column name="receivable" />
+        </property>
+         <property name="payable" type="java.lang.Character">
+            <column name="payable" />
+        </property>
+         <property name="memos" type="java.lang.String">
+            <column name="memos" length="40"/>
+        </property>
+    </class>
+</hibernate-mapping>

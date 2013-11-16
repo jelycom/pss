@@ -1,0 +1,169 @@
+﻿/* 整体定义 */
+body{
+	position:relative;
+	overflow-y:hidden !important;
+}
+.li_out{
+	float:left;
+	text-align:center;
+	border-top:1px solid #eeeeee;
+	border-left:1px solid #eeeeee;
+	border-right:1px solid #717171;
+	border-bottom:1px solid #717171;
+	color:#333333;
+	margin-left:2px;
+	padding:5px;
+	line-height:1.3em;
+}
+.li_over{
+	border-top:1px solid #717171;
+	border-left:1px solid #717171;
+	border-right:1px solid #eeeeee;
+	border-bottom:1px solid #eeeeee;
+	color:#000000;
+	cursor:pointer;
+}
+
+/* 头部 */
+.topmenu{
+	position:relative;
+	font-size:1.2em;
+}
+.topmenu .bgcolor{
+	width:2px;
+	height:2px;
+	padding:5px;
+	display:inline-block;
+	font-size:1px;
+}
+.top table{
+	margin:0px;
+	width:100%;
+}
+.top table td{
+	border:0px;
+	padding:0px;
+}
+.ui-dialog{ font-size:1.2em; }
+.tips{ color:red; }
+
+/*  菜单内容样式  */
+.leftMenu{
+	font-size:1.2em;
+	width:170px;
+	text-align:center;
+	position:relative;
+	float:left;
+	padding:3px !important;
+}
+.menuBlank{
+	background:#fff;
+	height:100%;
+}
+.menutree{
+	background:#FFF;
+	border-top:none;
+	overflow:hidden;
+	height:100%;
+}
+.leftMenu input{	                /*  一级菜单  */
+	width:140px;
+	height:30px;
+	font-size:13px;
+	font-weight:bold;
+	margin-bottom:3px;
+	border:none;
+	color:#333;
+}
+.actionLink{
+	cursor:pointer;
+}
+.actionLink a{
+	line-height:2em;
+	padding-left:24px;
+	text-align:left;
+	background-position:10px center;
+}
+/* 展开二级菜单 */
+.haveChild{
+	margin-left:2px;
+	line-height:2em;
+	font-weight:bold;
+}
+/* 二级菜单 */
+.actionLink ul{
+	display:none;
+}
+/* 二级菜单 */
+.actionLink li{
+	padding-left:5px;
+}
+
+/*  操作界面样式  */
+.lables{
+	position:relative;
+	float:left;
+	font-size:1.2em !important;
+}
+
+/* 控制标签滚动的箭头样式 */
+.leftIcon{
+	width:18px;
+	height:31px;
+	cursor:pointer;
+	background:url(../images/scroll-left.gif) no-repeat -18px 0px;
+	position:absolute;
+	z-index:10;
+	display:none;
+}
+.leftIcon_over{
+	background:url(../images/scroll-left.gif) no-repeat 0px 0px;
+}
+.leftIcon_disabled{
+	background:url(../images/scroll-left.gif) no-repeat -18px 0px;
+	cursor:default;
+	visibility:visible;
+}
+.rgtIcon{
+	width:18px;
+	height:31px;
+	cursor:pointer;
+	background:url(../images/scroll-right.gif) no-repeat 0 0px;
+	position:absolute;
+	right:0px;
+	display:none;
+	z-index:10;
+}
+.rgtIcon_over{
+	background:url(../images/scroll-right.gif) no-repeat -18px 0px;
+}
+.rgtIcon_disabled{
+	background:url(../images/scroll-right.gif) no-repeat 0px 0px;
+	cursor:default;
+}
+
+li.pitch_on{
+	font-weight:bold;
+	cursor:default;
+}
+
+.oftenButton{
+	width:100px;
+	margin-right:15px;
+}
+.oftenButton a:hover{
+	text-decoration:none;
+}
+iframe{
+	height:100%;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.ul_control{	
+	position:absolute;
+	top:1px;
+	width:100%;
+	z-index:-1;
+}

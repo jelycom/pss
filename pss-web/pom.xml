@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>parent</artifactId>
+		<groupId>cn.jely.cd</groupId>
+		<version>0.0.3-SNAPSHOT</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	<groupId>cn.jely.cd</groupId>
+	<artifactId>pss-web</artifactId>
+	<packaging>war</packaging>
+	<name>web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<scm>
+		<connection>scm:svn:https://192.168.1.88/svn/jelypss/trunk/pss-web</connection>
+		<url>https://192.168.1.88/svn/jelypss/trunk/pss-web</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>cn.jely.cd</groupId>
+			<artifactId>pss-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>pss</finalName>
+		<plugins>
+			<!-- <plugin> 拷贝maven相应的jar包到web工程lib下 <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+				<version>2.1</version> <executions> <execution> <id>copy-dependencies</id> <phase>package</phase> <goals> <goal>copy-dependencies</goal> 
+				</goals> <configuration> <outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory> </configuration> </execution> 
+				</executions> </plugin> -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<contextPath>/pss</contextPath>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<webDefaultXml>src/main/resources/webdefault.xml</webDefaultXml>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>80</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+							<daemon>true</daemon>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

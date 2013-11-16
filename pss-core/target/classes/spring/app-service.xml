@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<bean id="baseDataTypeService" class="cn.jely.cd.service.impl.BaseDataTypeServiceImpl"></bean>
+	<bean id="baseDataService" class="cn.jely.cd.service.impl.BaseDataServiceImpl"></bean>
+	<bean id="productTypeService" class="cn.jely.cd.service.impl.ProductTypeServiceImpl"></bean>
+	<bean id="productService" class="cn.jely.cd.service.impl.ProductServiceImpl"></bean>
+	<bean id="actionResourceService" class="cn.jely.cd.sys.service.impl.ActionResourceServiceImpl" />
+	<bean id="roleService" class="cn.jely.cd.sys.service.impl.RoleServiceImpl" />
+	<!-- 用户 -->
+	<bean id="userService" class="cn.jely.cd.sys.service.impl.UserServiceImpl"/>
+	<bean id="regionService" class="cn.jely.cd.service.impl.RegionServiceImpl" />
+	<!-- 自定义业务类型 -->
+	<bean id="businessTypeService" class="cn.jely.cd.sys.service.impl.BusinessTypeServiceImpl"/>
+	<!-- 帐户(现金/银行) -->
+	<bean id="fundAccountService" class="cn.jely.cd.service.impl.FundAccountServiceImpl" />
+	<!-- 往来单位 -->
+	<bean id="businessUnitsService" class="cn.jely.cd.service.impl.BusinessUnitsServiceImpl" />
+	<!-- 联系人 -->
+	<bean id="contactsService" class="cn.jely.cd.service.impl.ContactsServiceImpl" />
+	<!-- 库房 -->
+	<bean id="warehouseService" class="cn.jely.cd.service.impl.WarehouseServiceImpl" />
+	<!-- 库房货位 -->
+	<bean id="warehouseAllocationService" class="cn.jely.cd.service.impl.WarehouseAllocationServiceImpl" />
+	<!-- 部门 -->
+	<bean id="departmentService" class="cn.jely.cd.service.impl.DepartmentServiceImpl" />
+	<!-- 员工 -->
+	<bean id="employeeService" class="cn.jely.cd.service.impl.EmployeeServiceImpl" />
+	<!-- 系统初始化 -->
+	<bean id="systemService" class="cn.jely.cd.sys.service.impl.SystemServiceImpl"/>
+	<!-- 会计期间 -->
+	<bean id="accountingPeriodService" class="cn.jely.cd.sys.service.impl.AccountingPeriodServiceImpl"/>
+	<!-- 期初帐户 -->
+	<bean id="periodAccountService" class="cn.jely.cd.sys.service.impl.PeriodAccountServiceImpl"/>
+	<!-- 期初应收应付 -->
+	<bean id="periodARAPService" class="cn.jely.cd.sys.service.impl.PeriodARAPServiceImpl"/>
+	<!-- 期初库存 -->
+	<bean id="periodStockService" class="cn.jely.cd.sys.service.impl.PeriodStockServiceImpl"/>
+	<!-- 定时任务 -->
+	<bean id="timerJobService" class="cn.jely.cd.sys.service.impl.TimerJobServiceImpl"/>
+	<!-- 公司信息 -->
+	<bean id="companyInfoService" class="cn.jely.cd.sys.service.impl.CompanyInfoServiceImpl"/>
+	<!-- 页面查询条件信息 -->
+	<bean id="querydataService" class="cn.jely.cd.service.impl.QuerydataServiceImpl"/>
+		<!-- 状态 -->
+	<bean id="stateService" class="cn.jely.cd.sys.service.impl.StateServiceImpl"/>
+		<!-- 状态-资源-操作关联 -->
+	<bean id="stateResourceOPService" class="cn.jely.cd.sys.service.impl.StateResourceOPServiceImpl"/>
+		<!-- 会计科目 -->
+	<bean id="bursaryService" class="cn.jely.cd.service.impl.BursaryServiceImpl"/>
+	<!-- 系统配置 -->
+	<bean id="systemSettingService" class="cn.jely.cd.sys.service.impl.SystemSettingServiceImpl"/>
+	<!-- 业务单据部分 -->
+	
+	<!-- 产品采购计划 -->
+	<bean id="productPlanPurchaseService" class="cn.jely.cd.service.impl.ProductPlanPurchaseServiceImpl" />
+	<bean id="productPlanDeliveryService" class="cn.jely.cd.service.impl.ProductPlanDeliveryServiceImpl" />
+	<bean id="productOrderBillPurchaseService" class="cn.jely.cd.service.impl.ProductOrderBillPurchaseServiceImpl" />
+	<bean id="productOrderBillDeliveryService" class="cn.jely.cd.service.impl.ProductOrderBillDeliveryServiceImpl" />
+	<!-- 进出产品 -->
+	<bean id="productDeliveryService" class="cn.jely.cd.service.impl.ProductDeliveryServiceImpl"/>
+	<bean id="productPurchaseService" class="cn.jely.cd.service.impl.ProductPurchaseServiceImpl"/>
+	<bean id="productDeliveryReturnService" class="cn.jely.cd.service.impl.ProductDeliveryReturnServiceImpl"/>
+	<bean id="productPurchaseReturnService" class="cn.jely.cd.service.impl.ProductPurchaseReturnServiceImpl"/>
+	<!-- 实时库存相关 -->
+	<bean id="productStockDetailService" class="cn.jely.cd.service.impl.ProductStockDetailServiceImpl"/>
+	<!-- 同价/异价调拨 -->
+	<bean id="productTransferSameService" class="cn.jely.cd.service.impl.ProductTransferSameServiceImpl"/>
+	<bean id="productTransferDiffService" class="cn.jely.cd.service.impl.ProductTransferDiffServiceImpl"/>
+	
+	<!-- 收付款 -->
+	<bean id="accountInService" class="cn.jely.cd.service.impl.AccountInServiceImpl"/>
+	<bean id="accountOutService" class="cn.jely.cd.service.impl.AccountOutServiceImpl"/>
+	<!-- 转帐 -->
+	<bean id="accountTransferService" class="cn.jely.cd.service.impl.AccountTransferServiceImpl"/>
+	<!-- 其它收入/支出  -->
+	<bean id="accountOtherInService" class="cn.jely.cd.service.impl.AccountOtherInServiceImpl"/>
+	<bean id="accountOtherOutService" class="cn.jely.cd.service.impl.AccountOtherOutServiceImpl"/>
+	<!-- 盘点 -->
+	<bean id="productStockingService" class="cn.jely.cd.service.impl.ProductStockingServiceImpl"/>
+	<!-- 盘盈盘亏表 -->
+	<bean id="inventoryProfitService" class="cn.jely.cd.service.impl.InventoryProfitServiceImpl"/>
+	<bean id="inventoryLossService" class="cn.jely.cd.service.impl.InventoryLossServiceImpl"/>
+</beans>

@@ -1,0 +1,410 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding:0px;
+	margin:0px;
+}
+body{
+	margin:0px auto;
+	width:100%;
+	color:#000;
+	text-align:center;
+	font-size:62.5%;
+	overflow-y:scroll !important;
+}
+a{
+	letter-spacing:-0px !important;
+	letter-spacing:-1px;
+}
+a:link, a:visited{
+	text-decoration:none;
+	color:#000;
+}
+a:hover{
+	color:#000;
+	text-decoration:underline;
+}
+table{
+	border:0px;
+	width:100%;
+	margin:5px auto;
+	border-collapse:collapse;
+	text-align:left;
+}
+td, th{
+	padding:0 4px;
+}
+div{
+	text-align:left;
+}
+li{
+	list-style:none;
+}
+textarea{
+	font-size:12px;
+	width:100%;
+	resize:none;
+	overflow:scroll;
+	overflow-x:hidden;
+	border:0;
+	background-color:transparent;
+	color:inherit;
+}
+th{
+	text-align:center;
+	font-weight:bold;
+	padding:8px;
+}
+select{
+	width:auto !important;
+}
+/* 除按钮外的input背景透明色 */
+.nobutton_input{
+	background:transparent;
+}
+/* 日期和单据编号输入框大小 
+.date{
+	width:6em;
+}*/
+.node{
+	width:10em;
+}
+
+.li_out{
+	font-size:12px;
+}
+
+/* 查询方式 */
+td.query{
+	text-align:left;
+}
+span.search, span#details{
+	cursor:pointer;
+}
+
+/* 非数据表格样式——不需要边框 */
+.out_table{
+	margin:5px auto !important;
+}
+.out_table td, .out_table th{
+	border:0px;
+}
+
+/* 表头标题文字样式 */
+#mainform{
+	width:100%;
+}
+#mainform .title{
+	text-align:center;
+	font-size:24px;
+	font-weight:bold;
+}
+#mainform .ui-jqgrid-htable th{
+	font-size:11px;
+}
+
+/* 遮盖层 */
+.cover{
+	background:#ffffff;
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:10000;
+}
+
+/* 弹出窗口样式 */
+.popup_window{
+	width:730px;
+	background:#FFF;
+	display:none;
+	position:absolute;
+	z-index:100;
+	font-size:1.2em;
+}
+.popup_window label{
+	width:72px;
+	display:inline-block;
+}
+.popup_window_body{
+	text-align:center;
+}
+
+/* 弹出窗口标题 */
+.popup_window_title{
+	margin-bottom:5px;
+	cursor:move;
+}
+.popup_window_title table{
+	margin:0px;
+	width:100%;
+}
+.popup_window_title td, .popup_window_title th{
+	font-size:14px;
+	font-weight:bold;
+}
+
+/* 弹出窗口的输入框 */
+.popup_window .text_input{
+	border:1px solid #333;
+}
+/* 商品单位信息 */
+.unit_relation input{
+	border:0px !important;
+}
+.unit_relation td, .unit_relation th{
+	border:1px solid #666;	
+}
+
+/* 表格外输入框样式 */
+.out_input{
+	border:0px;
+	border-bottom:1px solid #999;
+	background:transparent;
+}
+
+/* 弹出选择框 */
+.popup_select{
+	display:none;
+	width:150px;
+	background:#FFF;
+	border:1px solid #000;
+	position:absolute;
+	left:70px;
+}
+
+/* 基本信息页面 */
+.page_title{
+	font-weight:bold;
+	font-size:14px;
+	margin-top:3px;
+}
+/* 标题栏和操作栏 */
+.page_title, .caozuo{
+	position:relative;
+	padding:5px;
+	padding-left:20px;
+}
+.data_page{
+	font-size:1.2em;
+	position:relative;
+	width:100%;
+}
+.caozuo li{
+	float:left;
+	display:block;
+	padding:5px;
+	cursor:pointer;
+}
+
+/* 备注单元格 */
+.remark_td{
+	text-align:center;
+}
+.remark_td p{
+	text-align:left;
+}
+
+/* 表格分页控制样式 */
+#tablePagination{
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:30px;
+	font-size:12px;
+	font-family:"宋体";
+}
+#tablePagination_rowsPerPage{
+	display:none;
+}
+.page{
+	cursor:pointer;
+	text-decoration:underline;
+	margin-left:15px;
+}
+
+/* 公司基本信息的输入框 */
+.oddtd input{
+	border:0;
+	background-color:transparent;
+	width:99%;
+	color:inherit;
+}
+
+/* 公司信息样式 */
+.eventd{
+	border:1px solid;
+	border-color:inherit;
+	width:15%;
+	line-height:2.5em;
+}
+.oddtd{
+	text-align:left;
+	border:1px solid;
+	border-color:inherit;
+}
+
+/* 提示框 */
+.stockTips{
+	display:none;
+	position:absolute;
+	background-color:white;
+}
+
+/* 分级分类树样式 */
+.tree_div{
+	position:relative;
+}
+.gridTableDiv{
+	width:100%;
+	height:100%;
+	border:0;
+}
+.tree_title{
+	padding:2px;
+	border-bottom:0;
+	height:16px;
+}
+/* 分类树中过滤行 */
+.ui-jqgrid-titlebar .searchNodeArea{
+	float:right;
+	position:relative;
+	width:50%;
+	background-color:#ffffff;
+	margin-right:3px;
+}
+.searchNodeArea #searchNode{
+	width:80%;
+	height:100%;
+	border:0;
+	float:left;
+}
+.searchNodeArea #searchButton{
+	width:16px;
+	height:16px;
+	position:absolute;
+	right:6px;
+}
+.treedata_div{
+/*	position:relative;
+	float:right;*/
+	position:absolute;
+	right:0;
+}
+.ui-jqgrid table{
+/*	border-collapse:inherit;*/
+}
+.gridTableDiv{
+	float:left;
+	overflow:hidden;
+}
+/* 隐藏grid和pager */
+.hidegrid, .hidepager{
+	display:none;
+}
+/* 隐藏显示列的控制 */
+#thbutton{
+	display:none;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#thbutton button{
+	border:0;
+	height:20px;
+	width:16px;
+}
+.hidecol{
+	z-index:2000;
+}
+#hidecolName{
+	position:absolute;
+	padding:0.3em;
+	z-index:2001;
+}
+#hidecolName li{
+	cursor:pointer;
+	padding:.2em 0 0.2em 0.5em;
+}
+#hidecolName input{
+	margin-right:3px;
+	vertical-align:text-bottom;
+}
+.selectTree{
+	z-index:2000;
+	height:130px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	display:none;
+	position:fixed;
+}
+.selectTree .ui-widget-content{
+	border:0;
+}
+.selectTree .ui-resizable-s{
+	bottom:0px;
+}
+.selectTree table,.tree_div table{
+	border-collapse:separate;
+}
+.selectTree td,.tree_div td{
+	border:0 !important;
+}
+.tree_div .ui-jqgrid-htable{
+/*	display:none !important;*/
+}
+/* 工具行按钮 */
+.tButton{
+	margin-left:.3em;
+	margin-right:.3em;
+}
+.tButton .ui-button-text{
+	padding-top:.1em;
+	padding-bottom:.1em;
+	padding-left:.5em
+}
+/* 弹出框 */
+.ui-dialog{
+	font-size:1.2em;
+}
+.definedForm,.viewBill,.viewDiv{
+	display:none;
+}
+/* 管理过滤器界面 */
+#manageTable td{
+	padding-top:3px;
+}
+#acceptDel{
+	display:none;
+	text-align:center;
+}
+/* 禁用的组件 */
+.disabled{
+	filter: alpha(opacity=40);
+	opacity:0.4;
+	cursor:default !important;
+}
+/* layout配置 */
+.data_page .tree_div, .data_page .treedata_div, #gridFather{
+	border:0px;
+}
+/*#pageWest,#pageNorth,#pageEast,#pageSouth,#pageCenter{
+	border:0;
+}*/
+.data_page .ui-layout-pane,.ui-layout-center{
+	overflow:hidden !important;
+}
+/* 选中树节点信息*/
+#treeName{
+	border:0;
+}
+#attrTitle{
+	padding:2px;
+}
+.selectedFiled{
+	margin:0;
+	height:100%;
+}
+.selectedFiled td{
+	text-align:center;
+}

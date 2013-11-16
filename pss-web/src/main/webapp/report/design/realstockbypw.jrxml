@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="realstock" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02d1b6a2-9bef-459b-a8b3-635ffe1dabea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="amount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[amount]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[productName]]></fieldDescription>
+	</field>
+	<field name="productUnit" class="java.lang.String">
+		<fieldDescription><![CDATA[productUnit]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[quantity]]></fieldDescription>
+	</field>
+	<field name="shortName" class="java.lang.String">
+		<fieldDescription><![CDATA[shortName]]></fieldDescription>
+	</field>
+	<field name="warehouseName" class="java.lang.String">
+		<fieldDescription><![CDATA[warehouseName]]></fieldDescription>
+	</field>
+	<variable name="price" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{amount}.divide(new java.math.BigDecimal($F{quantity}),new Integer(2),new Integer(2))]]></variableExpression>
+	</variable>
+	<variable name="sumquantity" class="java.lang.Integer" resetType="Group" resetGroup="productGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<variable name="avgprice" class="java.math.BigDecimal" resetType="Group" resetGroup="productGroup" calculation="Average">
+		<variableExpression><![CDATA[$V{price}]]></variableExpression>
+	</variable>
+	<variable name="sumamount" class="java.math.BigDecimal" resetType="Group" resetGroup="productGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<group name="productGroup">
+		<groupExpression><![CDATA[$F{productName}]]></groupExpression>
+		<groupHeader>
+			<band height="23">
+				<textField>
+					<reportElement uuid="bf139958-1798-4d23-9cff-185682ffdfd4" x="4" y="2" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="2cf03229-9394-4071-a841-38a32aa2b8bf" x="104" y="2" width="85" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{shortName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="d834fd19-1c86-424d-a410-bde894602d6c" x="198" y="2" width="68" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{productUnit}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="21">
+				<textField>
+					<reportElement uuid="0ffe7d9f-6a92-4ca6-b5d3-cd152552f98d" x="420" y="0" width="49" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{avgprice}]]></textFieldExpression>
+				</textField>
+				<textField pattern="###0.00" isBlankWhenNull="true">
+					<reportElement uuid="c386cf0f-c86c-479e-bc25-084bb78df608" x="470" y="0" width="85" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{sumamount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="37506a43-2fe3-40d0-abc6-e7981111a8b7" x="320" y="1" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{sumquantity}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6c261798-e4c7-4929-968b-14d78ed0d059" x="227" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[产品库存表]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b6858d81-db40-4b1b-b8a1-ae5278f38bff" x="470" y="2" width="86" height="20"/>
+				<textElement/>
+				<text><![CDATA[amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f41e7702-0fc0-4bf5-995c-12eaa4f525f4" x="320" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0998b2c5-0fa0-4e0a-908f-e7e01800fcb6" x="189" y="2" width="68" height="20"/>
+				<textElement/>
+				<text><![CDATA[productUnit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca8442dc-83f3-4eb5-b7c3-f71a37a50436" x="4" y="0" width="85" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement/>
+				<text><![CDATA[productName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b9547412-c5e3-4499-8248-e5ba07b4afc4" x="420" y="2" width="49" height="20"/>
+				<textElement/>
+				<text><![CDATA[price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2d674b2e-f622-41cb-a793-40bf7e2efe1c" x="104" y="0" width="85" height="20"/>
+				<textElement/>
+				<text><![CDATA[shortName]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="dbfc08ec-02f1-458e-a6db-c720d141be17" x="194" y="0" width="63" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{warehouseName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6228894b-f66f-4564-9749-19d7d5ee5f43" x="320" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0bbb61ff-afc7-4801-89e4-52a20c2bf0c5" x="420" y="0" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{price}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement uuid="b94b36ab-c98e-4566-9a65-f131eeee143e" x="470" y="0" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1d3c7536-4a91-436e-8ca3-1438a0b63060" x="126" y="0" width="44" height="20"/>
+				<textElement/>
+				<text><![CDATA[库房名称]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="24" splitType="Stretch"/>
+	</summary>
+</jasperReport>

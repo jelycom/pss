@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.jely.cd</groupId>
+	<artifactId>jelypss</artifactId>
+	<version>0.0.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>jelypss</name>
+
+	<!-- 指定项目编码 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.1.0.RELEASE</spring.version>
+	</properties>
+	<modules>
+		<module>pss-core</module>
+		<module>pss-web</module>
+		<module>parent</module>
+	</modules>
+	<scm>
+		<connection>scm:svn:https://192.168.1.88/svn/jelypss/trunk</connection>
+		<url>https://192.168.1.88/svn/jelypss/trunk</url>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<autoVersionSubModules>true</autoVersionSubModules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- 设定持续集成所需的发布包服务器 -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+		<!-- 注意:需要和maven的conf中setting的xml的servers下server的id一致 -->
+			<name>Releases</name>
+			<url>http://192.168.1.88:8080/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>http://192.168.1.88:8080/nexus/content/repositories/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

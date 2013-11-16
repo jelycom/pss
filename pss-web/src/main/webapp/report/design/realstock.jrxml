@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="realstock" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02d1b6a2-9bef-459b-a8b3-635ffe1dabea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="amount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[amount]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[productName]]></fieldDescription>
+	</field>
+	<field name="productUnit" class="java.lang.String">
+		<fieldDescription><![CDATA[productUnit]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[quantity]]></fieldDescription>
+	</field>
+	<field name="shortName" class="java.lang.String">
+		<fieldDescription><![CDATA[shortName]]></fieldDescription>
+	</field>
+	<field name="warehouseName" class="java.lang.String">
+		<fieldDescription><![CDATA[warehouseName]]></fieldDescription>
+	</field>
+	<variable name="price" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{amount}.divide(new java.math.BigDecimal($F{quantity}),new Integer(2),new Integer(2))]]></variableExpression>
+	</variable>
+	<variable name="groupAmount" class="java.math.BigDecimal" resetType="Group" resetGroup="warehouseGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="groupQuantity" class="java.lang.Integer" resetType="Group" resetGroup="warehouseGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<variable name="sumAmount" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="sumQuantity" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<group name="warehouseGroup" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{warehouseName}]]></groupExpression>
+		<groupFooter>
+			<band height="20">
+				<textField pattern="#0.00" isBlankWhenNull="true">
+					<reportElement x="471" y="0" width="74" height="20" uuid="1f9d95c3-cfbd-4929-8a2b-beb29730e8b4"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{groupAmount}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="350" y="0" width="42" height="20" uuid="d0e900ce-50ba-42e2-85d8-e092cf826be7"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{groupQuantity}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="3" y="0" width="100" height="20" uuid="3268a5ca-8b44-4dce-bc29-f946009466bb"/>
+					<text><![CDATA[合  计:]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="0" width="100" height="20" printWhenGroupChanges="warehouseGroup" uuid="6c261798-e4c7-4929-968b-14d78ed0d059"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[产品库存表]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="362" y="0" width="44" height="20" uuid="1d3c7536-4a91-436e-8ca3-1438a0b63060"/>
+				<text><![CDATA[库房名称]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="406" y="0" width="100" height="20" uuid="dbfc08ec-02f1-458e-a6db-c720d141be17"/>
+				<textFieldExpression><![CDATA[$F{warehouseName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="455" y="0" width="90" height="20" uuid="b6858d81-db40-4b1b-b8a1-ae5278f38bff"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[库存金额]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="42" height="20" uuid="f41e7702-0fc0-4bf5-995c-12eaa4f525f4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="0" width="68" height="20" uuid="0998b2c5-0fa0-4e0a-908f-e7e01800fcb6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[单位]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="0" width="169" height="20" isPrintWhenDetailOverflows="true" uuid="ca8442dc-83f3-4eb5-b7c3-f71a37a50436"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[商品名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="0" width="63" height="20" uuid="b9547412-c5e3-4499-8248-e5ba07b4afc4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[单价]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="0" width="109" height="20" uuid="2d674b2e-f622-41cb-a793-40bf7e2efe1c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[简称]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField pattern="###0.00">
+				<reportElement x="455" y="7" width="90" height="20" uuid="b94b36ab-c98e-4566-9a65-f131eeee143e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="7" width="42" height="20" uuid="6228894b-f66f-4564-9749-19d7d5ee5f43"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="7" width="169" height="20" uuid="bf139958-1798-4d23-9cff-185682ffdfd4"/>
+				<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="282" y="7" width="68" height="20" uuid="d834fd19-1c86-424d-a410-bde894602d6c"/>
+				<textFieldExpression><![CDATA[$F{productUnit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="7" width="63" height="20" uuid="0bbb61ff-afc7-4801-89e4-52a20c2bf0c5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{price}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="173" y="7" width="109" height="20" uuid="2cf03229-9394-4071-a841-38a32aa2b8bf"/>
+				<textFieldExpression><![CDATA[$F{shortName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="445" y="0" width="100" height="20" uuid="909d4e79-834e-492c-85bd-e8e42a1e0313"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{sumAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="0" width="65" height="20" uuid="a04ea68e-2b71-4c9b-a9c6-94cb4499a2d4"/>
+				<textFieldExpression><![CDATA[$V{sumQuantity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="1" width="100" height="20" uuid="a0623c5b-de4d-4796-8838-cbce7303f5b3"/>
+				<text><![CDATA[总  计:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="0" width="45" height="20" uuid="1cfeb810-233e-423d-8ac0-cfd06072d551"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[总数量:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="45" height="20" uuid="1a0a3281-693f-4932-a153-80eda4602fd7"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[总金额:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

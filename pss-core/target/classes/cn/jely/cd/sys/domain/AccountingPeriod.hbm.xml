@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.jely.cd.sys.domain">
+    <class name="AccountingPeriod" table="accountingperiod">
+        <id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="org.hibernate.id.enhanced.TableGenerator">
+				<param name="table_name">sequence</param>
+				<param name="segment_value">ACCOUNTINGPERIOD</param>
+			</generator>
+        </id>
+        <property name="name" type="java.lang.String" not-null="true"  >
+            <column name="name" length="14" unique="true" not-null="true"/>
+        </property>
+        <property name="year" type="java.lang.String">
+            <column name="Year" length="4" />
+        </property>
+        <property name="month" type="java.lang.String">
+            <column name="Month" length="2" />
+        </property>
+        <property name="start" type="java.util.Date" not-null="true">
+            <column name="Start" not-null="true"/>
+        </property>
+        <property name="end" type="java.util.Date" not-null="true">
+            <column name="End" not-null="true"/>
+        </property>
+        <property name="state" type="java.lang.Integer">
+           <!--  <column name="state" unique="true" not-null="true"/> -->
+        </property>
+    </class>
+</hibernate-mapping>
