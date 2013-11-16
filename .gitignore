@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 Desktop.ini
 .svn/
 .project
 .settings/
+=======
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+>>>>>>> edfd93b6027ca511f92a927f20a2161e4cca6b3c
