@@ -3,6 +3,9 @@ Desktop.ini
 .svn/
 .project
 .settings/
+target/
+.classpath
+.log
 =======
 *.class
 
