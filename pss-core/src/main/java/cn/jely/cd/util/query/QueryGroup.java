@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 查询条件WHERE部分封装
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-8-30 下午3:24:39
  */
 public class QueryGroup {

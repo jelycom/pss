@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 /**
  * 将查询条件存入Session以便报表可以使用。
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-10-21 上午10:57:56
  */
 public class ObjectQueryInterceptor extends AbstractInterceptor {

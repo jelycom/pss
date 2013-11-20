@@ -12,7 +12,7 @@ import java.util.Collection;
  * 集合检查器，不符合逻辑抛错。
  * @ClassName:CollectionChecker
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-12 下午2:54:53
  *
  */

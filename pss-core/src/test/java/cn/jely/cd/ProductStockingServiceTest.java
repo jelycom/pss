@@ -27,7 +27,7 @@ import cn.jely.cd.util.DateUtils;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-9-4 下午3:58:48
  */
 public class ProductStockingServiceTest  extends BaseServiceTest{

@@ -9,7 +9,7 @@ package cn.jely.cd.util.state;
 /**
  * 单据状态管理类
  * @ClassName:StateManager Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-12 上午11:30:55
  * @param <T>
  * 

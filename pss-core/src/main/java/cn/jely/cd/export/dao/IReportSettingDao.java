@@ -11,7 +11,7 @@ import cn.jely.cd.export.domain.ReportSetting;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-10-28 下午1:48:46
  */
 public interface IReportSettingDao extends IBaseDao<ReportSetting> {

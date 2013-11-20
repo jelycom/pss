@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  * Adjacency(id-pid)节点类
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-11-14 下午8:19:57
  */
 public class AdjacencyNode<T> implements Serializable{

@@ -14,7 +14,7 @@ import cn.jely.cd.util.query.ObjectQuery;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-25 下午5:30:28
  */
 public interface IProductCommonService<T> extends IBaseService<T> {

@@ -22,7 +22,7 @@ import cn.jely.cd.util.state.State;
 /**
  * 帐户其它收入/支出
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-20 下午12:11:31
  */
 public class AccountOtherCommonMaster implements IStateAble,IItemAble,Cloneable,ToPageModel<AccountOtherCommonMasterPM>{

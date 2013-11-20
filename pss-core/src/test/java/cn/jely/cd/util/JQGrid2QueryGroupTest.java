@@ -15,7 +15,7 @@ import cn.jely.cd.util.query.QueryGroup;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-8-30 下午5:18:44
  */
 public class JQGrid2QueryGroupTest {

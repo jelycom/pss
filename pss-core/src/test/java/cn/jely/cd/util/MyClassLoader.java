@@ -8,7 +8,7 @@ package cn.jely.cd.util;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-11-13 下午9:26:09
  */
 public class MyClassLoader extends ClassLoader {

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 /**产品进出货单页面模型
  * @ClassName:ProductCommonDetailPM Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-10 下午4:27:11
  * 
  */

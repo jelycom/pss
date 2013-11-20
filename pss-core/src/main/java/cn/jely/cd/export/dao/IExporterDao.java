@@ -23,7 +23,7 @@ import cn.jely.cd.export.ro.RealStockRO;
 
 /**
  * 导出相关操作类（包括导出各种格式及不同的设备等）。
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-10-24 下午5:58:57
  */
 public interface IExporterDao  extends IBaseDao<Object>{

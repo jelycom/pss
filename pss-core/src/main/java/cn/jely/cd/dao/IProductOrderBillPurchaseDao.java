@@ -11,7 +11,7 @@ import cn.jely.cd.domain.ProductOrderBillPurchaseMaster;
 /**
  * @ClassName:IProductOrderBillPurchaseDao
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-5-27 下午2:28:37
  *
  */

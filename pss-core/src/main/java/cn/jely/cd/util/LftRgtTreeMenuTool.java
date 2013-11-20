@@ -19,7 +19,7 @@ import cn.jely.cd.vo.MenuTree;
 
 /**
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-9-17 下午4:32:58
  */
 public class LftRgtTreeMenuTool<T  extends LftRgtTreeNode > {

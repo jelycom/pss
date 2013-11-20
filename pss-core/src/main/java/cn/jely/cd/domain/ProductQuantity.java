@@ -8,7 +8,7 @@ package cn.jely.cd.domain;
 
 /**
  *  与计划/订单进行状态关联更新计算时传递用
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-11 下午5:12:52
  *
  */

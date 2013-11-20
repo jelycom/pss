@@ -10,7 +10,7 @@ import cn.jely.cd.domain.ProductCommonMaster;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-29 下午8:25:33
  */
 public class ProductDeliveryDaoAbstractImpl<T extends ProductCommonMaster> extends ProductCommonDaoAbstractImpl<T> {

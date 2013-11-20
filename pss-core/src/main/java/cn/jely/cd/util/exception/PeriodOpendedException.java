@@ -9,7 +9,7 @@ package cn.jely.cd.util.exception;
 /**
  * @ClassName:PeriodOpendedException
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-6-20 下午4:54:38
  *
  */

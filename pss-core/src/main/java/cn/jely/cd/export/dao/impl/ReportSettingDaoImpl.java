@@ -19,7 +19,7 @@ import edu.emory.mathcs.backport.java.util.Arrays;
 /**
  * 报表配置参数表
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-10-28 下午1:49:51
  */
 public class ReportSettingDaoImpl extends BaseDaoImpl<ReportSetting> implements IReportSettingDao {

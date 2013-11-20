@@ -14,7 +14,7 @@ import org.apache.struts2.json.annotations.JSON;
  * 表操作信息组件,通过Interceptor来进行值的修改
  * @ClassName:InfoCompnent
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-2 上午11:21:25
  *
  */

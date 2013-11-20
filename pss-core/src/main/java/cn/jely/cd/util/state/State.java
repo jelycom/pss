@@ -13,7 +13,7 @@ package cn.jely.cd.util.state;
  * 					COMPLETE:满足条件完成的,比如:单据数量,金额入出方向都完全一致
  * 					DISCARD:作废的,只有在新建的/审核中的没有参与执行的才可以作废.
  * Description:新建状态可以
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-11 下午11:21:49
  *
  */

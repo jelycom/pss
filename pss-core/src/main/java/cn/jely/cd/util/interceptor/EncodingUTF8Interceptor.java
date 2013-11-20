@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.interceptor.Interceptor;
  * 有乱码时才需要此拦截器，默认可不用。
  * @ClassName:EncodingUTF8Interceptor
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-9 上午8:59:17
  *
  */

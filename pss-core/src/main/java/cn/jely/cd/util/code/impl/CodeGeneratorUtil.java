@@ -39,7 +39,7 @@ import cn.jely.cd.util.code.ICodeGenerator;
  * 需要使用工厂/工厂方法,读出实体类对应的生成器及生成格式,并按提供的值进行生成.
  * 
  * @ClassName:CodeGeneratorUtil Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-1 下午5:53:03
  * 
  */

@@ -11,7 +11,7 @@ package cn.jely.cd.util.state;
  * 根据泛型参数确定返回的类型,
  * @ClassName:IDoWithState
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-12 上午10:49:10
  *
  */

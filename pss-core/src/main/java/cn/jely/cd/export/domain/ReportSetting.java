@@ -13,7 +13,7 @@ import cn.jely.cd.sys.domain.ActionResource;
 /**
  * 报表信息类，用于保存上传的报表设计文件，编译后的文件及相应的打印文件。
  * 设计为在页面选择相应的资源地址，然后上传相应的模板文件，同一资源地址有多个模板时可指定默认的模板文件。再通过拦截器查询相应的模板调用打印。
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-10-28 上午11:33:58
  */
 public class ReportSetting {

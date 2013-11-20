@@ -10,7 +10,7 @@ import java.util.Comparator;
 
 /**
  *
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-9-12 下午5:25:07
  */
 public class LftRgtTreeNodeComparator implements Comparator<LftRgtTreeNode> {

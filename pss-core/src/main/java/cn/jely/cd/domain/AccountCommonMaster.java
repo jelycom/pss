@@ -22,7 +22,7 @@ import cn.jely.cd.util.state.State;
 /**
  * 帐户收付款主表类
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-2 下午4:11:19
  * 
  */

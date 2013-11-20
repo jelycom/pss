@@ -21,7 +21,7 @@ import cn.jely.cd.vo.RealStockVO;
  * 库存相关服务
  * @ClassName:IProductStockDetailService
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-1 下午3:47:50
  *
  */

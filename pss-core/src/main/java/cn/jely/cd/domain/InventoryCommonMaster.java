@@ -20,7 +20,7 @@ import cn.jely.cd.util.state.State;
 /**
  * 盘盈Inventory Profit、盘亏表父类
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-9-4 上午9:30:31
  */
 public class InventoryCommonMaster implements Serializable, IStateAble, IItemAble, Cloneable {

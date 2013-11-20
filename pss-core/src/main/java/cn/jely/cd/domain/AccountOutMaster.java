@@ -12,7 +12,7 @@ import java.sql.Date;
 /**
  * @ClassName:AccountOutMaster
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-2 下午7:17:27
  *
  */

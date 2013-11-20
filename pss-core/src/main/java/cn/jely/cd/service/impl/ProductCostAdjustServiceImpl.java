@@ -24,7 +24,7 @@ import cn.jely.cd.util.state.StateManager;
 
 /**
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-24 上午8:55:35
  */
 public class ProductCostAdjustServiceImpl extends BillStateServiceImpl<ProductCostAdjustMaster> implements

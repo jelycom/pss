@@ -14,7 +14,7 @@ import cn.jely.cd.domain.BusinessUnits;
  * 期初及结帐期间应收应付款
  * @ClassName:PeriodARAP
  * Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-6-8 下午2:58:41
  *
  */

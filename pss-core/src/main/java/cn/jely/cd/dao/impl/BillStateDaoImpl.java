@@ -31,7 +31,7 @@ import cn.jely.cd.util.state.StateManager;
 
 /**
  * @ClassName:BillStateDaoImpl Description:
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-15 上午9:49:18
  * 
  */

@@ -19,7 +19,7 @@ import cn.jely.cd.util.state.State;
 /**
  * 库存盘点主表
  * 可加入一个属性表示需盘点总数,用盘点明细中完成数除以总数可得到盘点百分比.
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-8-16 上午9:43:53
  */
 public class ProductStockingMaster implements Serializable,IStateAble,IItemAble,Cloneable {

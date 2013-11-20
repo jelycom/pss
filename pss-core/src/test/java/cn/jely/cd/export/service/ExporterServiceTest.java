@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,6 +23,7 @@ import javax.annotation.Resource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.poi.hssf.model.InternalWorkbook;
 import org.apache.poi.hssf.record.NameRecord;
 import org.apache.poi.hssf.usermodel.DVConstraint;
@@ -52,6 +54,7 @@ import cn.jely.cd.BaseServiceTest;
 import cn.jely.cd.dao.IProductDao;
 import cn.jely.cd.dao.IProductTypeDao;
 import cn.jely.cd.domain.LftRgtTreeNodeComparator;
+import cn.jely.cd.domain.Product;
 import cn.jely.cd.domain.ProductType;
 import cn.jely.cd.export.domain.TransformSetting;
 import cn.jely.cd.export.domain.TransformSettingFactory;
@@ -63,7 +66,7 @@ import cn.jely.cd.util.UrlUtil;
 
 /**
  * 
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-10-30 上午10:58:53
  */
 public class ExporterServiceTest extends BaseServiceTest {
@@ -204,32 +207,58 @@ public class ExporterServiceTest extends BaseServiceTest {
 		FileInputStream fis = new FileInputStream(new File("f:/tddownload/product.xlsx"));
 		XSSFWorkbook workBook = new XSSFWorkbook(fis);
 		XSSFSheet productSheet = workBook.getSheet("product");
+		List<TransformSetting> transSettings = null;
 		if(productSheet!=null){
 			Iterator<Row> rowIterator = productSheet.rowIterator();
+			boolean title = true;
 			while(rowIterator.hasNext()){
 				Row row = rowIterator.next();
-				for (int i = 0; i < row.getLastCellNum(); i++) {
-					Cell cell = row.getCell(i);
-					if (cell!=null) {
-						int cellType = cell.getCellType();
-						switch (cellType) {
-						case Cell.CELL_TYPE_STRING:
-							System.out.print(cell.getStringCellValue()+" ");
-							break;
-						case Cell.CELL_TYPE_FORMULA:
-							System.out.print(cell.getStringCellValue()+" ");
-							break;
-						case Cell.CELL_TYPE_NUMERIC:
-							System.out.print(cell.getNumericCellValue()+" ");
-							break;
-						default:
-							break;
+				if (title) {
+					transSettings = new TransformSettingFactory().getProductSetting();
+				}else{
+					for (int i = 0; i < row.getLastCellNum(); i++) {
+						Cell cell = row.getCell(i);
+						TransformSetting transformSetting = transSettings.get(i);
+						String propertyName = transformSetting.getPropertyName();
+						Field[] declaredFields = Product.class.getDeclaredFields();
+						for (Field field : declaredFields) {
+							if(propertyName.equals(field.getName())){
+								Object cellValue = getCellValue(cell, null);
+								break;
+							}
 						}
 					}
 				}
-				System.out.println(row.getFirstCellNum()+" last:"+row.getLastCellNum());
+				System.out.println("first:"+row.getFirstCellNum()+" last:"+row.getLastCellNum());
 			}
 		}
+	}
+	
+	private Object getCellValue(Cell cell,Integer cellType){
+		Object ret = null;
+		if (cell!=null) {
+			if (cellType == null) {
+				cellType = cell.getCellType();
+			}
+			switch (cellType) {
+			case Cell.CELL_TYPE_NUMERIC:
+				ret = new Double(cell.getNumericCellValue());
+				break;
+			case Cell.CELL_TYPE_STRING:
+				ret = cell.getStringCellValue();
+				break;
+			case Cell.CELL_TYPE_BOOLEAN:
+				ret = cell.getBooleanCellValue();
+			case Cell.CELL_TYPE_FORMULA:
+				int formulaType = cell.getCachedFormulaResultType();
+				ret = getCellValue(cell, formulaType);
+				break;
+			default:
+				break;
+			}
+		}
+		System.out.print(ret);
+		return ret;
 	}
 	@Test
 	public void testPOI() throws IOException {

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 /**
  * 产品盘点明细表
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-8-16 上午9:49:39
  */
 public class ProductStockingDetail {

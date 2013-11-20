@@ -12,7 +12,7 @@ import cn.jely.cd.util.state.StateManager;
 
 /**
  * 应该在保存及更新时检查它的状态,根据状态来确定是否更新相关联的属性(如:orderbill是NEW属性还是audited才参与业务运算)
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-7-13 下午11:57:01
  *
  * @param <T>

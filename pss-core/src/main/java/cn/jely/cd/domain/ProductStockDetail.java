@@ -13,7 +13,7 @@ import cn.jely.cd.util.math.SystemCalUtil;
 /**
  * 产品库存明细表,用于记录产品成本,不同的仓库可记录不同的成本
  * 如果是平均计算,则一个仓库只有一条记录.如果是有批次的(如:先进先出,后进先出,批次指定等),则每一笔进都需要记录.
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-6-26 下午1:55:08
  *
  */

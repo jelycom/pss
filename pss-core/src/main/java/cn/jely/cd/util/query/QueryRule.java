@@ -10,7 +10,7 @@ import cn.jely.cd.util.FieldOperation;
 
 /**
  * 单个查询条件
- * @author 周义礼 Email:11861744@qq.com
+ * @author 秋风 Email:623109799@qq.com
  * @version 2013-8-30 下午4:04:28
  */
 public class QueryRule {
